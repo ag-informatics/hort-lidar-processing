@@ -1,0 +1,51 @@
+﻿Record,Trial,Collection Date,Collection Level,Height (cm),plot_id,date_dir,trial_dir
+10171,Tomato Fertilizer Trial,8/10/2023,Plant,67,1017,Sampling_08_10_2023,Tomato_Fertilizer_Trial
+10172,Tomato Fertilizer Trial,8/10/2023,Plant,71,1017,Sampling_08_10_2023,Tomato_Fertilizer_Trial
+10173,Tomato Fertilizer Trial,8/10/2023,Plant,65,1017,Sampling_08_10_2023,Tomato_Fertilizer_Trial
+10261,Tomato Fertilizer Trial,8/10/2023,Plant,69,1026,Sampling_08_10_2023,Tomato_Fertilizer_Trial
+10262,Tomato Fertilizer Trial,8/10/2023,Plant,68,1026,Sampling_08_10_2023,Tomato_Fertilizer_Trial
+10263,Tomato Fertilizer Trial,8/10/2023,Plant,74,1026,Sampling_08_10_2023,Tomato_Fertilizer_Trial
+10331,Tomato Fertilizer Trial,8/10/2023,Plant,67,1033,Sampling_08_10_2023,Tomato_Fertilizer_Trial
+10332,Tomato Fertilizer Trial,8/10/2023,Plant,74,1033,Sampling_08_10_2023,Tomato_Fertilizer_Trial
+10333,Tomato Fertilizer Trial,8/10/2023,Plant,57,1033,Sampling_08_10_2023,Tomato_Fertilizer_Trial
+10421,Tomato Fertilizer Trial,8/10/2023,Plant,71,1042,Sampling_08_10_2023,Tomato_Fertilizer_Trial
+10422,Tomato Fertilizer Trial,8/10/2023,Plant,73,1042,Sampling_08_10_2023,Tomato_Fertilizer_Trial
+10423,Tomato Fertilizer Trial,8/10/2023,Plant,69,1042,Sampling_08_10_2023,Tomato_Fertilizer_Trial
+10511,Tomato Fertilizer Trial,8/10/2023,Plant,68,1051,Sampling_08_10_2023,Tomato_Fertilizer_Trial
+10512,Tomato Fertilizer Trial,8/10/2023,Plant,67,1051,Sampling_08_10_2023,Tomato_Fertilizer_Trial
+10513,Tomato Fertilizer Trial,8/10/2023,Plant,75,1051,Sampling_08_10_2023,Tomato_Fertilizer_Trial
+10641,Tomato Fertilizer Trial,8/10/2023,Plant,89,1064,Sampling_08_10_2023,Tomato_Fertilizer_Trial
+10642,Tomato Fertilizer Trial,8/10/2023,Plant,70,1064,Sampling_08_10_2023,Tomato_Fertilizer_Trial
+10643,Tomato Fertilizer Trial,8/10/2023,Plant,67,1064,Sampling_08_10_2023,Tomato_Fertilizer_Trial
+10751,Tomato Fertilizer Trial,8/10/2023,Plant,73,1075,Sampling_08_10_2023,Tomato_Fertilizer_Trial
+10752,Tomato Fertilizer Trial,8/10/2023,Plant,69,1075,Sampling_08_10_2023,Tomato_Fertilizer_Trial
+10753,Tomato Fertilizer Trial,8/10/2023,Plant,62,1075,Sampling_08_10_2023,Tomato_Fertilizer_Trial
+20161,Tomato Fertilizer Trial,8/10/2023,Plant,86,2016,Sampling_08_10_2023,Tomato_Fertilizer_Trial
+20162,Tomato Fertilizer Trial,8/10/2023,Plant,88,2016,Sampling_08_10_2023,Tomato_Fertilizer_Trial
+20163,Tomato Fertilizer Trial,8/10/2023,Plant,89,2016,Sampling_08_10_2023,Tomato_Fertilizer_Trial
+20271,Tomato Fertilizer Trial,8/10/2023,Plant,69,2027,Sampling_08_10_2023,Tomato_Fertilizer_Trial
+20272,Tomato Fertilizer Trial,8/10/2023,Plant,58,2027,Sampling_08_10_2023,Tomato_Fertilizer_Trial
+20273,Tomato Fertilizer Trial,8/10/2023,Plant,68,2027,Sampling_08_10_2023,Tomato_Fertilizer_Trial
+20351,Tomato Fertilizer Trial,8/10/2023,Plant,80,2035,Sampling_08_10_2023,Tomato_Fertilizer_Trial
+20352,Tomato Fertilizer Trial,8/10/2023,Plant,69,2035,Sampling_08_10_2023,Tomato_Fertilizer_Trial
+20353,Tomato Fertilizer Trial,8/10/2023,Plant,79,2035,Sampling_08_10_2023,Tomato_Fertilizer_Trial
+20431,Tomato Fertilizer Trial,8/10/2023,Plant,80,2043,Sampling_08_10_2023,Tomato_Fertilizer_Trial
+20432,Tomato Fertilizer Trial,8/10/2023,Plant,78,2043,Sampling_08_10_2023,Tomato_Fertilizer_Trial
+20433,Tomato Fertilizer Trial,8/10/2023,Plant,77,2043,Sampling_08_10_2023,Tomato_Fertilizer_Trial
+20511,Tomato Fertilizer Trial,8/10/2023,Plant,77,2051,Sampling_08_10_2023,Tomato_Fertilizer_Trial
+20512,Tomato Fertilizer Trial,8/10/2023,Plant,72,2051,Sampling_08_10_2023,Tomato_Fertilizer_Trial
+20513,Tomato Fertilizer Trial,8/10/2023,Plant,68,2051,Sampling_08_10_2023,Tomato_Fertilizer_Trial
+20621,Tomato Fertilizer Trial,8/10/2023,Plant,78,2062,Sampling_08_10_2023,Tomato_Fertilizer_Trial
+20622,Tomato Fertilizer Trial,8/10/2023,Plant,71,2062,Sampling_08_10_2023,Tomato_Fertilizer_Trial
+20623,Tomato Fertilizer Trial,8/10/2023,Plant,72,2062,Sampling_08_10_2023,Tomato_Fertilizer_Trial
+20741,Tomato Fertilizer Trial,8/10/2023,Plant,78,2074,Sampling_08_10_2023,Tomato_Fertilizer_Trial
+20742,Tomato Fertilizer Trial,8/10/2023,Plant,72,2074,Sampling_08_10_2023,Tomato_Fertilizer_Trial
+20743,Tomato Fertilizer Trial,8/10/2023,Plant,63,2074,Sampling_08_10_2023,Tomato_Fertilizer_Trial
+03,Garden Plots,8/12/2023,Plant,58,03,Sampling_08_12_2023,Garden_Plots
+04,Garden Plots,8/12/2023,Plant,69,04,Sampling_08_12_2023,Garden_Plots
+05,Garden Plots,8/12/2023,Plant,110,05,Sampling_08_12_2023,Garden_Plots
+06,Garden Plots,8/12/2023,Plant,145,06,Sampling_08_12_2023,Garden_Plots
+01,Garden Plots,8/12/2023,Plant,123,01,Sampling_08_12_2023,Garden_Plots
+16,Garden Plots,8/12/2023,Plant,117,16,Sampling_08_12_2023,Garden_Plots
+19,Garden Plots,8/12/2023,Plant,121,19,Sampling_08_12_2023,Garden_Plots
+20,Garden Plots,8/12/2023,Plant,126,20,Sampling_08_12_2023,Garden_Plots
