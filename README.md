@@ -16,6 +16,8 @@ project_folders
 - Tomato_Fertilizer_Trial - stores associated point clouds.
 - Transplant-Age_Plants - stores associated point clouds.
 - Watermelon_Irrigation_Trial - stores associated point clouds.
+## Environment
+A description of the environment used for all processing and analysis is found in the environment.yml file in the main directory.
 ## Important Scripts
 1. bio_vol_reg_analysis.ipynb - analyzes the performance of the volume-structural characteristic regressions.
 2. biomass_plots.ipynb - produces figures for physically measured structural characteristics.
