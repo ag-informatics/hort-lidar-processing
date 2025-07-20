@@ -38,6 +38,12 @@ def las_to_ply(itrial_dir, date_dir, plot_id, otrial_dir):
         ('blue', 'uint8')
     ]
 
+    # Normalize x axis around the center of the point cloud
+    max_xyz = np.max(xyz, axis=0)
+    min_xyz = np.min(xyz, axis=0)
+    center = (max_xyz + min_xyz) / 2
+    xyz[:, 0] -= center[0]
+
     # Assign point cloud array dimensions
     vertices = np.zeros(xyz.shape[0], dtype=vertices_dtype)
     vertices['x'] = xyz[:, 0]
@@ -54,7 +60,7 @@ def las_to_ply(itrial_dir, date_dir, plot_id, otrial_dir):
     ply_data = PlyData([vertex_element])
 
     # Save the PlyData to a .ply file
-    ply_data.write('{a}\{b}\{c}\{c}.ply'.format(a=otrial_dir,
+    ply_data.write('{a}\{b}\{c}\{c}_v2.ply'.format(a=otrial_dir,
                                                 b=date_dir,
                                                 c=plot_id))
     del file, ply_data
@@ -66,7 +72,7 @@ def las_to_ply(itrial_dir, date_dir, plot_id, otrial_dir):
 
 def convert_colors(itrial_dir, date_dir, plot_id, otrial_dir):
     # Load file
-    point_cloud = o3d.io.read_point_cloud('{a}\{b}\{c}\{c}.ply'.format(a=itrial_dir,
+    point_cloud = o3d.io.read_point_cloud('{a}\{b}\{c}\{c}_v2.ply'.format(a=itrial_dir,
                                                                        b=date_dir,
                                                                        c=plot_id))
     
@@ -79,7 +85,7 @@ def convert_colors(itrial_dir, date_dir, plot_id, otrial_dir):
     # Update the point cloud with the new colors
     point_cloud.colors = o3d.utility.Vector3dVector(hsv_colors)
 
-    o3d.io.write_point_cloud("{a}\{b}\{c}\hsv_{c}.ply".format(a=otrial_dir,
+    o3d.io.write_point_cloud("{a}\{b}\{c}\hsv_{c}_v2.ply".format(a=otrial_dir,
                                                               b=date_dir,
                                                               c=plot_id), point_cloud)
 
@@ -91,7 +97,7 @@ def convert_colors(itrial_dir, date_dir, plot_id, otrial_dir):
 
 def c_thresh_seg(itrial_dir, date_dir, plot_id, otrial_dir, h, s, v):
     # Load file
-    pcd = o3d.io.read_point_cloud('{a}\{b}\{c}\hsv_{c}.ply'.format(a=itrial_dir,
+    pcd = o3d.io.read_point_cloud('{a}\{b}\{c}\hsv_{c}_v2.ply'.format(a=itrial_dir,
                                                                    b=date_dir,
                                                                    c=plot_id))
 
@@ -154,7 +160,7 @@ def c_thresh_seg(itrial_dir, date_dir, plot_id, otrial_dir, h, s, v):
     plant_pcd.colors = o3d.utility.Vector3dVector(hsv_colors)
 
     # Save point cloud
-    o3d.io.write_point_cloud('{a}\{b}\{c}\colored_plant_{c}.ply'.format(a=otrial_dir,
+    o3d.io.write_point_cloud('{a}\{b}\{c}\colored_plant_{c}_v2.ply'.format(a=otrial_dir,
                                                                         b=date_dir,
                                                                         c=plot_id), plant_pcd)
 
@@ -169,7 +175,7 @@ def c_thresh_seg(itrial_dir, date_dir, plot_id, otrial_dir, h, s, v):
     non_plant_pcd.colors = o3d.utility.Vector3dVector(hsv_colors)
 
     # Save point cloud
-    o3d.io.write_point_cloud('{a}\{b}\{c}\colored_non_plant_{c}.ply'.format(a=otrial_dir,
+    o3d.io.write_point_cloud('{a}\{b}\{c}\colored_non_plant_{c}_v2.ply'.format(a=otrial_dir,
                                                                             b=date_dir,
                                                                             c=plot_id), non_plant_pcd)
 
@@ -181,7 +187,7 @@ def c_thresh_seg(itrial_dir, date_dir, plot_id, otrial_dir, h, s, v):
 
 def crop_b_box(itrial_dir, date_dir, plot_id, otrial_dir, width, depth, height):
     # Load file
-    pcd = o3d.io.read_point_cloud('{a}\{b}\{c}\colored_plant_{c}.ply'.format(a=itrial_dir,
+    pcd = o3d.io.read_point_cloud('{a}\{b}\{c}\colored_plant_{c}_v2.ply'.format(a=itrial_dir,
                                                                             b=date_dir,
                                                                             c=plot_id))
     
@@ -213,7 +219,7 @@ def crop_b_box(itrial_dir, date_dir, plot_id, otrial_dir, width, depth, height):
                                                                  max_bound=(max_x, max_y, max_z)))
 
      # Save point cloud
-    o3d.io.write_point_cloud('{a}\{b}\{c}\cropped_plant_{c}.ply'.format(a=otrial_dir,
+    o3d.io.write_point_cloud('{a}\{b}\{c}\cropped_plant_{c}_v2.ply'.format(a=otrial_dir,
                                                                         b=date_dir,
                                                                         c=plot_id), cropped_cloud)
 
@@ -225,7 +231,7 @@ def crop_b_box(itrial_dir, date_dir, plot_id, otrial_dir, width, depth, height):
 
 def knn_outlier_removal(itrial_dir, date_dir, plot_id, otrial_dir, k, std_ratio):
     # Load file
-    pcd = o3d.io.read_point_cloud('{a}\{b}\{c}\cropped_plant_{c}.ply'.format(a=itrial_dir,
+    pcd = o3d.io.read_point_cloud('{a}\{b}\{c}\cropped_plant_{c}_v2.ply'.format(a=itrial_dir,
                                                                              b=date_dir,
                                                                              c=plot_id))
 
@@ -259,7 +265,7 @@ def knn_outlier_removal(itrial_dir, date_dir, plot_id, otrial_dir, k, std_ratio)
     #num_outliers_removed = len(xyz) - len(inlier_indices)
     #print("Number of outliers removed: ", num_outliers_removed)
 
-    o3d.io.write_point_cloud('{a}\{b}\{c}\knn_plant_{c}.ply'.format(a=otrial_dir,
+    o3d.io.write_point_cloud('{a}\{b}\{c}\knn_plant_{c}_v2.ply'.format(a=otrial_dir,
                                                                     b=date_dir,
                                                                     c=plot_id), filtered_cloud)
 
@@ -270,7 +276,7 @@ def knn_outlier_removal(itrial_dir, date_dir, plot_id, otrial_dir, k, std_ratio)
 
 def sor_outlier_removal(itrial_dir, date_dir, plot_id, otrial_dir, k, std_ratio):
     # Load file
-    pcd = o3d.io.read_point_cloud('{a}\{b}\{c}\cropped_plant_{c}.ply'.format(a=itrial_dir,
+    pcd = o3d.io.read_point_cloud('{a}\{b}\{c}\cropped_plant_{c}_v2.ply'.format(a=itrial_dir,
                                                                              b=date_dir,
                                                                              c=plot_id))
 
@@ -281,14 +287,14 @@ def sor_outlier_removal(itrial_dir, date_dir, plot_id, otrial_dir, k, std_ratio)
     # Apply outlier removal filter
     pcd_filtered, ind = pcd.remove_statistical_outlier(nb_neighbors=nb_neighbors, std_ratio=std_ratio)
 
-    o3d.io.write_point_cloud('{a}\{b}\{c}\sor_plant_{c}.ply'.format(a=otrial_dir,
+    o3d.io.write_point_cloud('{a}\{b}\{c}\sor_plant_{c}_v2.ply'.format(a=otrial_dir,
                                                                     b=date_dir,
                                                                     c=plot_id), pcd_filtered)
 
     # Create a new point cloud with only the outliers
     outlier_cloud = pcd.select_by_index(ind, invert=True)
 
-    o3d.io.write_point_cloud('{a}\{b}\{c}\sor_nonplant_{c}.ply'.format(a=otrial_dir,
+    o3d.io.write_point_cloud('{a}\{b}\{c}\sor_nonplant_{c}_v2.ply'.format(a=otrial_dir,
                                                                        b=date_dir,
                                                                        c=plot_id), outlier_cloud)
     
@@ -299,10 +305,10 @@ def sor_outlier_removal(itrial_dir, date_dir, plot_id, otrial_dir, k, std_ratio)
 
 def crop_by_pc(rtrial_dir, date_dir, plot_id, ttrial_dir,):
     # Load raw and template point clouds
-    raw = o3d.io.read_point_cloud('{a}\{b}\{c}\{c}.ply'.format(a=rtrial_dir,
+    raw = o3d.io.read_point_cloud('{a}\{b}\{c}\{c}_v2.ply'.format(a=rtrial_dir,
                                                                b=date_dir,
                                                                c=plot_id))
-    template = o3d.io.read_point_cloud('{a}\{b}\{c}\cropped_plant_{c}.ply'.format(a=ttrial_dir,
+    template = o3d.io.read_point_cloud('{a}\{b}\{c}\cropped_plant_{c}_v2.ply'.format(a=ttrial_dir,
                                                                                   b=date_dir,
                                                                                   c=plot_id))
     
@@ -313,7 +319,7 @@ def crop_by_pc(rtrial_dir, date_dir, plot_id, ttrial_dir,):
     # Use the `crop()` function to crop the raw point cloud using the calculated bounds.
     raw_cropped = raw.crop(bbox_template)
 
-    o3d.io.write_point_cloud('{a}\{b}\{c}\cr_{c}.ply'.format(a=rtrial_dir,
+    o3d.io.write_point_cloud('{a}\{b}\{c}\cr_{c}_v2.ply'.format(a=rtrial_dir,
                                                              b=date_dir,
                                                              c=plot_id), raw_cropped)
 

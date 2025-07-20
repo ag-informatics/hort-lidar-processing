@@ -84,6 +84,6 @@ def compute_ch_vol(inf, outf):
     cross_sectional_area = hull2.volume
 
     # Save the convex hull as a triangle mesh
-    o3d.io.write_triangle_mesh("{a}.obj".format(a=outf), hull)
+    o3d.io.write_triangle_mesh("{a}_v2.obj".format(a=outf), hull)
 
     return volume, cross_sectional_area

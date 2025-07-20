@@ -1,0 +1,11 @@
+subset,parameter,volume_method,coef_a,coef_b,r2,rmse,rrmse,equation
+tomato,aboveground_veg_biomass,convh_vol,383.8446031,NA,0.908320339,63.26292456,0.307398664,linear
+tomato,leaf_biomass,convh_vol,166.9335177,NA,0.95071444,20.47459944,0.235909661,linear
+tomato,leaf_no,convh_vol,959.5816051,NA,0.953204479,118.2457673,0.245647486,linear
+tomato,shoot_biomass,convh_vol,216.9110855,NA,0.855370728,44.7194575,0.375759313,linear
+tomato,shoot_no,convh_vol,49.83366505,NA,0.946517077,6.019543274,0.219983309,linear
+watermelon,aboveground_veg_biomass,voxel_vol_02,2032.770327,NA,0.979764433,40.65926801,0.145912573,linear
+watermelon,leaf_biomass,voxel_vol_02,1104.567425,NA,0.985604128,18.38981139,0.120420142,linear
+watermelon,leaf_no,convh_vol,463.9711828,3.668677192,0.97517354,70.53404565,0.149714079,log
+watermelon,shoot_biomass,voxel_vol_02,928.202903,NA,0.95245753,29.02958181,0.230500982,linear
+watermelon,shoot_no,voxel_vol_005,2390.549449,NA,0.954679945,4.88296075,0.19629993,linear
