@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: "If you use this software or reference it, please cite it as below."
+authors:
+- family-names: "Doyle"
+  given-names: "Steven Anthony"
+- family-names: "Raturi"
+  given-names: "Ankita"
+title: "Horticultural Crop LiDAR Processing"
+version: 1.0.0
+date-released: 2025-07-26
+url: "https://github.com/ag-informatics/hort-lidar-processing"
